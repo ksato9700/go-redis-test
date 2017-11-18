@@ -1,0 +1,25 @@
+version: "3"
+services:
+  redis:
+    image: redis:latest
+
+  goclient:
+    build:
+      context: ./gclient
+    links:
+      - redis
+
+  goclient_min:
+    build:
+      context: ./gclient
+      dockerfile: Dockerfile.min
+    links:
+      - redis
+
+  goclient_msb:
+    build:
+      context: ./gclient
+      dockerfile: Dockerfile.msb
+    links:
+      - redis
+
