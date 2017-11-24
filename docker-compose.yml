@@ -23,3 +23,9 @@ services:
     links:
       - redis
 
+  goclient_strip:
+    build:
+      context: ./gclient
+      dockerfile: Dockerfile.strip
+    links:
+      - redis

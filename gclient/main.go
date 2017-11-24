@@ -1,10 +1,13 @@
 package main
 
 import "fmt"
+import "time"
 import "github.com/go-redis/redis"
 
 func main() {
 	var err error
+
+	time.Sleep(5 * time.Second)
 
 	client := redis.NewClient(&redis.Options{
 		Addr:     "redis:6379",
